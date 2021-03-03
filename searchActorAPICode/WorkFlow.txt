@@ -1,0 +1,16 @@
+Operation : search for actor and display all the actors details below 
+-actor first name and actor last name 
+-number of movies done by him 
+-top last 5 movie names 
+-roles in that 5 movies
+
+Steps:
+-user will enter first name and last name of the actor and submit 
+-Internal proecess :
+	-check that actor present or not 
+	if not present then return empty 
+	if present then :
+		write query to find number of movies done by him 
+		write query to find top 5 movies by that actor 
+		also write query to find roles in that 5 movies 
+		

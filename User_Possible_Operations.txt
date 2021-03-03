@@ -1,0 +1,31 @@
+1)search for a movie and display all the movie details 
+movie details include :
+-movie name 
+-year
+-different actors in that movie 
+-director first name and last name 
+-genres 
+
+2)search for actor and display all the actors details 
+-actor name 
+-number of movies done by him 
+-top last 5 movie names 
+-roles in that 5 movies 
+
+3)search for director and display all director details 
+-director name 
+-number of movies done by him 
+-top last 5 movies directed by him 
+
+4)Search for genre to get top 5 directors who do that genre movies 
+Example : if you select comedy then we will show you names of 5 directors who done more movies on comedy 
+
+5)Top 5 movies which are recently release on the home page of user 
+- once user clicks on any of the movie , then details of all the movie 
+sub operation :
+	-display movie details with year wise 
+	
+6)5 genre sections
+ -if user clicks on some section , then we have to show 10 movies releted to tthat genre 
+
+ 

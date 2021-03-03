@@ -1,0 +1,41 @@
+Use cases for admin :
+1)Add actors data - independently operation in actor table 
+2)adding director data - independently operation in director table 
+3)Adding movie data :
+	-add all movie details - name ,year 
+	-rankscore should be null by default 
+	-rankscore should update once anyone enters new review(create new review table) 
+	-Add Director for that movie by selecting search director query 
+		-search for director first name and last name 
+		-if director not present , then give option to add that director into table  and then he can use this for current operation
+		-Repeat this steps if multiple directors present for same movie 
+	-Adding Actors details :
+		-add first name and last name of the actor and check he is present or not
+			IF present then use that 
+			Else add that actor and then use him
+				- for adding new actor , you need to enter first name , last name , gender
+				-use this for current operation 
+		-add roles of that actor in that movie 
+		- do this step multiple times to add all the actors present in movie
+	-Give One more option to enter the genre of the movie 
+		-admin can search from the list or add new genre and then select 
+	user can submit data once he fill above details
+	Internal operation once user submits data :
+		-adding data to roles table : we have movie id , actors id roles - add all the actors roles wrt this movie in roles table 
+		-adding data to movie_genres: we have movie id , genres - add all the different genres wrt this movie in movie_genre table 
+		-adding data to movie_director table : we have movie id and we have director id , we can add data in movie_director table 
+		-updating director_genre table :
+			-check number of rows for that director in that table = Number_of_Director 
+			-check number of rows for that director + genre combination = Number_Genre1
+			-probabilty = Number_Genre1 / Number_of_Director
+			-now update all the rows with Director_id + Genre1 + Probabilty 
+			
+4)Need to thing on Review table :
+--
+		
+		
+	
+	
+	
+	
+	

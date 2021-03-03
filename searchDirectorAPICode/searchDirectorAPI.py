@@ -5,10 +5,8 @@ from mysql import connector
 import mysql
 import json
 import directorAPIUtil
+import MovieUtil
 
-app = Flask(__name__)
-
-@app.route('/searchDirector')
 def searchDirectorAPI():
 
     first_name = request.args.get('first_name')
@@ -29,7 +27,7 @@ def searchDirectorAPI():
     cursor.close()
 
     #check for empty and more that one condition :
-    isOneRecord = directorAPIUtil.validateLenght(director_data)
+    isOneRecord = MovieUtil.validateLenght(director_data)
 
     if not isOneRecord:
         return ""
@@ -42,7 +40,7 @@ def searchDirectorAPI():
     NumberOfMovies = cursor.fetchall()[0][0]
     cursor.close()
 
-    isGreaterThanZero = directorAPIUtil.validateNumberOfMoviesForDirector(NumberOfMovies)
+    isGreaterThanZero = MovieUtil.validateNumberOfMoviesForDirectorOrActor(NumberOfMovies)
 
     if isOneRecord and isGreaterThanZero:
         cursor = con.cursor()
@@ -58,6 +56,3 @@ def searchDirectorAPI():
         return str(SearchDirector_Dict)
 
     return ""
-
-if __name__ == "__main__":
-    app.run()
