@@ -1,11 +1,10 @@
 __auther__ = 'Ashish Patil'
-__auther__ = 'Ashish Patil'
 
 from flask import Flask,request,jsonify
 from mysql import connector
 import mysql
 import json
-import MovieUtil
+import directorAPIUtil
 
 app = Flask(__name__)
 
@@ -30,7 +29,7 @@ def searchDirectorAPI():
     cursor.close()
 
     #check for empty and more that one condition :
-    isOneRecord = MovieUtil.validateLenght(director_data)
+    isOneRecord = directorAPIUtil.validateLenght(director_data)
 
     if not isOneRecord:
         return ""
@@ -43,7 +42,7 @@ def searchDirectorAPI():
     NumberOfMovies = cursor.fetchall()[0][0]
     cursor.close()
 
-    isGreaterThanZero = MovieUtil.validateNumberOfMoviesForDirector(NumberOfMovies)
+    isGreaterThanZero = directorAPIUtil.validateNumberOfMoviesForDirector(NumberOfMovies)
 
     if isOneRecord and isGreaterThanZero:
         cursor = con.cursor()
@@ -54,7 +53,7 @@ def searchDirectorAPI():
         movies_data = cursor.fetchall();
         cursor.close()
 
-        SearchDirector_Dict = MovieUtil.fillSearchDirectorAPI(first_name,last_name,NumberOfMovies,movies_data)
+        SearchDirector_Dict = directorAPIUtil.fillSearchDirectorAPI(first_name,last_name,NumberOfMovies,movies_data)
         SearchDirector_Dict = json.dumps(SearchDirector_Dict)
         return str(SearchDirector_Dict)
 
