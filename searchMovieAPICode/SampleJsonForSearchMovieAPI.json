@@ -1,0 +1,28 @@
+{
+  "Movie_Name": "Vanilla Sky",
+  "Year": 2001,
+  "Genres": [
+    "Drama",
+    "Mystery",
+    "Romance",
+    "Sci-Fi",
+    "Thriller"
+  ],
+  "Director_Name": "Cameron Crowe",
+  "Five_Actors": {
+    "Actor_Names": [
+      "Mark Bramhall",
+      "W. Earl Brown",
+      "Marty (II) Collins",
+      "Steven Colvin",
+      "Tom Cruise"
+    ],
+    "Roles": [
+      "Sneezy",
+      "Barman",
+      "Martini Waiter",
+      "Himself",
+      "David Aames"
+    ]
+  }
+}

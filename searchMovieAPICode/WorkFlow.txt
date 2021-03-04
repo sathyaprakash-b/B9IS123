@@ -1,0 +1,17 @@
+Operation : search for a movie and display all the movie details 
+movie details include :
+-movie name 
+-year
+-different actors in that movie 
+-director first name and last name 
+-genres 
+
+steps :
+-user will put movie name and submit
+-Internal process :
+	-write query to check that movie is present with one row only or not 
+	if no then return empty 
+	if yes then 
+		- write query to find all the different actors acted in that movie with there roles 
+		- write query to find the director in that movie and get director first name and last name 
+		- write query to find the different genres of the movie
