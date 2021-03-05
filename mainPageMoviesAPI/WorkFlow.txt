@@ -1,0 +1,15 @@
+5)Top 5 movies which are recently release on the home page of user 
+- once user clicks on any of the movie , then details of all the movie 
+sub operation :
+	-display movie details with year wise
+	
+Steps :
+-On the home page by default show 5 movies which are release recently (and good rated if possible)
+-if user clicks on any of the movie , then front end should pass movie first name, then we can call searchMovieAPI()
+and show movie details
+
+
+mainPageMoviesAPI() json terms :
+Movie_Names : it will be list of 5 movies 
+Movie_Year : it will be list of 5 
+Ratings : it will be list of 5 (if possible) 

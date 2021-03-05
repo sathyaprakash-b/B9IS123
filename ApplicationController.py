@@ -7,6 +7,7 @@ import json
 import searchDirectorAPI
 import searchActorAPI
 import searchMovieAPI
+import mainPageTechnical
 
 app = Flask(__name__)
 
@@ -21,6 +22,10 @@ def searchActorController():
 @app.route('/searchMovie')
 def searchMovieController():
     return searchMovieAPI.searchMovieAPI()
+
+@app.route('/mainPageMovies')
+def mainPageMoviesController():
+    return mainPageTechnical.mainPageMoviesAPI();
 
 if __name__ == "__main__":
     app.run()
