@@ -8,6 +8,7 @@ import searchDirectorAPI
 import searchActorAPI
 import searchMovieAPI
 import mainPageTechnical
+import searchBasedOnGenres
 
 app = Flask(__name__)
 
@@ -26,6 +27,14 @@ def searchMovieController():
 @app.route('/mainPageMovies')
 def mainPageMoviesController():
     return mainPageTechnical.mainPageMoviesAPI();
+
+@app.route('/getAllGenres')
+def getAllGenres():
+    return searchBasedOnGenres.getGenres();
+
+@app.route('/getMovieBasedonGenre')
+def getMoviesBasedOnGenre():
+    return searchBasedOnGenres.getMovies()
 
 if __name__ == "__main__":
     app.run()
