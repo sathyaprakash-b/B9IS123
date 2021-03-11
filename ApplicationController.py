@@ -9,6 +9,7 @@ import searchActorAPI
 import searchMovieAPI
 import mainPageTechnical
 import searchBasedOnGenres
+import insertDetails
 
 app = Flask(__name__)
 
@@ -35,6 +36,14 @@ def getAllGenres():
 @app.route('/getMovieBasedonGenre')
 def getMoviesBasedOnGenre():
     return searchBasedOnGenres.getMovies()
+
+@app.route('/insertActor')
+def setActor():
+    return insertDetails.insertActor()
+
+@app.route('/insertDirector')
+def setDirector():
+    return insertDetails.insertDirector()
 
 if __name__ == "__main__":
     app.run()
