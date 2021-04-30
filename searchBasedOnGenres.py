@@ -49,7 +49,8 @@ def getMovies():
 
     cursor = con.cursor()
     cursor.execute("create view moviesSortedForGenres as select * from movies m join movies_genres mg on m.id = mg.movie_id "
-                   "where mg.genre = 'Short' and rankscore is not null order by m.year desc limit 10")
+                   "where mg.genre = %s and rankscore is not null order by m.year desc limit 10",(genre_of_movies,))
+    #cursor.execute("select * from actors where first_name = %s and last_name = %s", (first_name, last_name))
     cursor.close()
 
     cursor = con.cursor()

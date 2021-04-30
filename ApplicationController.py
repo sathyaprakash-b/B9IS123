@@ -10,6 +10,7 @@ import searchMovieAPI
 import mainPageTechnical
 import searchBasedOnGenres
 import insertDetails
+import ReviewDetails
 
 app = Flask(__name__)
 
@@ -44,6 +45,19 @@ def setActor():
 @app.route('/insertDirector')
 def setDirector():
     return insertDetails.insertDirector()
+
+
+@app.route('/insertMovie',  methods = ['POST'])
+def setMovies():
+    return insertDetails.insertMovie();
+
+@app.route('/addReview',methods = ['POST'])
+def addReview():
+    return ReviewDetails.addReview();
+
+@app.route('/getReview')
+def getReview():
+    return ReviewDetails.getReview();
 
 if __name__ == "__main__":
     app.run()

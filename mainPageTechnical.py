@@ -30,21 +30,36 @@ def mainPageMoviesAPI():
     mainPageMovieData = cursor.fetchall()
     cursor.close()
 
+    mainPageMovieData = data_preprocessing(mainPageMovieData)
+
     mainPageMovieDataDict = jsonForMainPageMovieData(mainPageMovieData)
     mainPageMovieDataDict = json.dumps(mainPageMovieDataDict)
 
     return mainPageMovieDataDict
 
 def jsonForMainPageMovieData(mainPageMovieData):
-  movie_dict = {}
-  movie_list = []
-  year_list = []
-  ranking_list = []
+  listForEachMovie = []
+  main_dict = {}
   for val in mainPageMovieData:
-    movie_list.append(val[1])
-    year_list.append(val[2])
-    ranking_list.append(val[3])
-  movie_dict['Movie_Names'] = movie_list
-  movie_dict['Movie_Year'] = year_list
-  movie_dict['Ratings'] = ranking_list
-  return movie_dict
+    movie_dict = {}
+    movie_dict['movie_name'] = val[1]
+    movie_dict['movie_year'] = str(val[2])
+    movie_dict['rating'] = str(val[3])
+    listForEachMovie.append(movie_dict)
+  main_dict['index_movies'] = listForEachMovie
+  return main_dict
+
+
+def data_preprocessing(mainPageMovieData):
+  updated_mainPageMovieData  = []
+
+  for each_record in mainPageMovieData:
+    rating = each_record[3]
+    if(int(each_record[3]) == 0):
+      rating = "NA"
+    movie_id = each_record[0]
+    movie_name = each_record[1]
+    movie_year = each_record[2]
+    t = (movie_id,movie_name,movie_year,rating)
+    updated_mainPageMovieData.append(t)
+  return updated_mainPageMovieData

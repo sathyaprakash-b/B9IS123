@@ -41,7 +41,10 @@ def searchActorAPI():
 
     isGreaterThanZero = MovieUtil.validateNumberOfMoviesForDirectorOrActor(NumberOfMovies)
 
-    if isOneRecord and isGreaterThanZero:
+    #if not isGreaterThanZero:
+    #    return ""
+
+    if isOneRecord:
         cursor = con.cursor()
         cursor.execute("select * from movies m join roles r on m.id = r.movie_id where r.actor_id = %s order by m.year desc",
                        (actor_id,))
@@ -52,4 +55,4 @@ def searchActorAPI():
     searchActorDictionary = searchActorUtil.fillSearchActorAPI(first_name, last_name, NumberOfMovies, movies_data)
     searchActorDictionary = json.dumps(searchActorDictionary)
 
-    return str(searchActorDictionary)
+    return searchActorDictionary

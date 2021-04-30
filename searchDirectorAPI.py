@@ -30,7 +30,7 @@ def searchDirectorAPI():
     isOneRecord = MovieUtil.validateLenght(director_data)
 
     if not isOneRecord:
-        return ""
+        return "Multiple Data Found problem"
 
     director_id = director_data[0][0]
 

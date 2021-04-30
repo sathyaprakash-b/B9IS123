@@ -9,10 +9,16 @@ def fillSearchActorAPI(first_name, last_name, NumberOfMovie, Movie_Data):
   searchActorDictionary['Actor_First_Name'] = first_name
   searchActorDictionary['Actor_Last_Name'] = last_name
   searchActorDictionary['Number_Of_Movies'] = NumberOfMovie
-  for i, val in enumerate(Movie_Data):
-    movie_list.append(val[1])
-    year_list.append(val[2])
-    roles_list.append(val[6])
+  if(len(Movie_Data)>0):
+    for i, val in enumerate(Movie_Data):
+      movie_list.append(val[1])
+      year_list.append(val[2])
+      roles_list.append(val[6])
+  else:
+    movie_list.append("NA")
+    year_list.append("NA")
+    roles_list.append("NA")
+
   movie_dictionary['Movie_Names'] = movie_list
   movie_dictionary['Release_Years'] = year_list
   movie_dictionary['Roles'] = roles_list
