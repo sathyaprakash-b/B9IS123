@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+	<title>Movie Review</title>
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="site-content">
+		<header class="site-header">
+			<div class="container">
+				<a href="index.html" id="branding">
+					<div class="logo-copy">
+						<h1 class="site-title">MOVIE Directory</h1>
+					</div>
+				</a>
+
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+					<ul class="menu">
+						<li class="menu-item" id="myBtn"><a>Admin Login</a></li>
+					</ul> <!-- .menu -->
+				</div> <!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+			</div>
+			<div class="container">
+				<div class="searchContainer">
+					<h4 style="margin: 0 0 4px;">Search By: </h4>
+					<input type="radio" id="searchmovie" name="searchcat" value="searchmovie" style="margin: 0 0px 0 15px;">
+					<label for="movie">Movie</label>
+					<input type="radio" id="actors" name="searchcat" value="actors" style="margin: 0 0px 0 15px;">
+					<label for="actors">Actors</label>
+					<input type="radio" id="directors" name="searchcat" value="directors" style="margin: 0 0px 0 15px;">
+					<label for="directors">Directors</label>
+					<input type="radio" id="genres" name="searchcat" value="genres" style="margin: 0 0px 0 15px;">
+					<label for="genres">Genres</label>
+
+					<div class="searchBox">
+						<input type="text" placeholder="Search..." id="normalsearch"
+							style="width: 75%; margin-top: 6px;" />
+						<select name="listofgenres" class="listofgenres" style="display: none;">
+							<option value="documentary">Documentary</option>
+							<option value="short">Short</option>
+							<option value="western">Western</option>
+							<option value="comedy">Comedy</option>
+							<option value="family">Family</option>
+							<option value="animation">Animation</option>
+							<option value="drama">Drama</option>
+							<option value="crime">Crime</option>
+							<option value="romance">Romance</option>
+							<option value="mystery">Mystery</option>
+							<option value="thriller">Thriller</option>
+							<option value="adult">Adult</option>
+							<option value="music">Music</option>
+							<option value="action">Action</option>
+							<option value="fantasy">Fantasy</option>
+							<option value="scifi">Sci-Fi</option>
+							<option value="horror">Horror</option>
+							<option value="war">War</option>
+							<option value="musical">Musical</option>
+							<option value="adventure">Adventure</option>
+							<option value="filmnoir">Film-Noir</option>
+						</select>
+						<button class="searchItems"><i class="fa fa-search"></i></button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main-content">
+			<div class="container">
+				<div class="page">
+					<div class="row" id="getAllMovies">
+					</div> <!-- .row -->
+				</div>
+			</div> <!-- .container -->
+		</main>
+	</div>
+
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="container">
+				<table>
+					<tr>
+						<th><label for="uname"><b>Username</b></label></th>
+						<td><input type="text" placeholder="Enter Username" name="uname" id="username" required /></td>
+					</tr>
+					<tr>
+						<th><label for="psw"><b>Password</b></label></th>
+						<td><input type="password" placeholder="Enter Password" name="psw" id="password" required />
+						</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><input type="button" class="authenticateAdmin" value="Submit" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		btn.onclick = function () {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+
+</html>
