@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Movie Review</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="site-content">
+        <header class="site-header">
+            <div class="container">
+                <a href="index.html" id="branding">
+                    <div class="logo-copy">
+                        <h1 class="site-title">Movie Directory</h1>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                <div class="page">
+                    <h1>Add Actor</h1>
+                    <table>
+                        <tr>
+                            <th><label for="actorfirstname"><b>First Name</b></label></th>
+                            <td><input type="text" placeholder="Enter First Name" name="actorfirstname"
+                                    id="actorfirstname" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="actorlastname"><b>Last Name</b></label></th>
+                            <td><input type="text" placeholder="Enter Last Name" name="actorlastname" id="actorlastname"
+                                    required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="gender"><b>Gender</b></label></th>
+                            <td>
+                                <select name="listofgenders" class="listofgenders">
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <input type="button" class="submitActor" value="Submit" />
+                                <input type="button" class="backButton" value="Back" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div> <!-- .container -->
+        </main>
+    </div>
+
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/addmovie.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
